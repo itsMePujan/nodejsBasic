@@ -1,6 +1,6 @@
 const http = require("http");
 const fs = require("fs");
-
+const os = require("os");
 http
   .createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "application/json" });
@@ -31,3 +31,20 @@ fs.appendFile("helloworld.txt", "hello world txt", function (err) {
   if (err) throw err;
   console.log("data saved!! ");
 });
+
+// fs make dir /
+fs.mkdir("test/test.txt", { recursive: true }, (err) => {
+  if (err) throw err;
+});
+
+// os
+const mem = os.totalmem();
+console.log(mem);
+
+////built in modules
+//http
+//os
+//fs
+
+// we can also make an custom module
+// module fie
